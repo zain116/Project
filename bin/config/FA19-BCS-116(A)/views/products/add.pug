@@ -1,0 +1,15 @@
+extends ../layout
+
+block content   
+    h1 add new task 
+    form(action="/Task/add",method="post")
+        .form-group
+            label(for="task") new task
+            input#task(type="text", class="form-control", name="task")
+        .form-group
+            label(for="date") task date
+            input#date(type="text", class="form-control", name="date")
+        .form-group
+            label(for="status") new status
+            input#status(type="text", class="form-control", name="status")
+        input(type="submit", class="btn btn-info")

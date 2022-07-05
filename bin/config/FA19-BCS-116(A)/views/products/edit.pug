@@ -1,0 +1,15 @@
+extends ../layout
+
+block content   
+    h1 Edit Tasks
+    form(action="/Task/edit/"+product._id,method="post")
+        .form-group
+            label(for="task") edit task
+            input#task(type="text", class="form-control", name="task" value=product.task)
+        .form-group
+            label(for="date") task date
+            input#date(type="text", class="form-control", name="date" value=product.date)
+        .form-group
+            label(for="status") task status
+            input#status(type="text", class="form-control", name="status" value=product.status)
+        input(type="submit", class="btn btn-info")

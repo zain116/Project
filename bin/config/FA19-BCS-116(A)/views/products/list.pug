@@ -1,0 +1,29 @@
+extends ../layout
+
+block content 
+    .row 
+        .col-md-9   
+            h1=title
+        .col-md-3 
+            input(type='text' placeholder='Search..')
+            a(href="/products/add")
+              i.fa.fa-plus(aria-hidden='true') 
+    table.table 
+        thead 
+
+        tbody   
+            each product in products 
+                tr 
+                    td
+                        a(href="/products/delete/"+product._id)
+                         i.fa.fa-trash(aria-hidden='true') 
+                        a(href="/products/edit/"+product._id)
+                         i.fa.fa-edit(aria-hidden='true')
+                    td=product.task
+                    td=product.date 
+                    td 
+                        select#tasks(name='tasks')
+                            option(value='ongoing') ongoing
+                            option(value='completed') completed
+                            
+                                    
